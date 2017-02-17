@@ -31,8 +31,8 @@ if led_choice == 2:
 # if we have chosen a valid choice, flash the LED 
 if LEDChoice>0:
     while count > 0:
-    LEDChoice.on()
-    sleep (1)
-    LEDChoice.off()
-    sleep(1)
-    count = count -1
+        LEDChoice.on()
+        sleep (1)
+        LEDChoice.off()
+        sleep(1)
+        count = count -1
