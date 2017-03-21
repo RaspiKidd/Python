@@ -2,14 +2,29 @@ from gpiozero import LED, Button
 from signal import pause
 import os
 
-red = LED(18) # this is saying the red LED is connected to pin 18 on the raspberry pi
-yellow = LED(23) # this is saying the yellow LED is connected to pin 23 on the raspberry pi
-green = LED(24) # this is saying the green LED is connected to pin 24 on the raspberry pi
-button = Button(25) # this is saying the button is connected to pin 25 on the raspberry pi
+red = LED(18)
+yellow = LED(23)
+green = LED(24)
+button = Button(25)
 
-os.system('clear') # Clears the screen
+print ("What LED would you like to turn on? ")
+print ("1: red?")
+print ("2: yellow?")
 
-print ("Press the Button to turn the LED on and off")
+choice = input("What LED would you like to turn on?")
 
-button.when_pressed = red.on
-button.when_released = red.off
+choice = int(choice)
+
+if choice == 1:
+    print ("You picked the red LED")
+    LEDChoice = red
+
+if choice == 2:
+    print ("You picked the Yellow LED")
+    LEDChoice = yellow
+
+
+button.when_pressed = LEDChoice.on
+button.when_released = LEDChoice.off
+
+pause()
