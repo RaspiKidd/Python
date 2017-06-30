@@ -13,7 +13,7 @@ air = 0
 
 mc.postToChat("Build a house")
 
-x, y, z = mc.player.getTilePos()
+x, y, z = mc.player.getPos()
 mc.setBlocks(x+1, y, z, x+width+1, y+height, z+length, blockType)
 
 # Hollow out the inside
